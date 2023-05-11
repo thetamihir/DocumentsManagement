@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+
+class DocumentsPresenter {
+    
+    static let share = DocumentsPresenter()
+    
+    
+    
+}
