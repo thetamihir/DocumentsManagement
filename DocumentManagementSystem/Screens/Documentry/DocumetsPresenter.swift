@@ -1,9 +1,11 @@
 //
-//  DocumetsPresenter.swift
+//  DocumentPreseneter.swift
 //  DocumentManagementSystem
 //
-//  Created by Mihir Shingala on 11/05/23.
+//  Created by Mihir Shingala on 12/05/23.
 //
+
+import Foundation
 
 import Foundation
 
@@ -40,5 +42,3 @@ class DocumetsPresenter{
 //    }
     
 }
-
-
