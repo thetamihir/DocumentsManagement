@@ -56,41 +56,24 @@ final class BiometricAuth {
     }
     
     func canEvaluate(completion: (Bool, BiometricType, BiometricError?) -> Void) {
-        // Asks Context if it can evaluate a Policy
-        // Passes an Error pointer to get error code in case of failure
         guard context.canEvaluatePolicy(policy, error: &error) else {
-            // Extracts the LABiometryType from Context
-            // Maps it to our BiometryType
             let type = biometricType(for: context.biometryType)
-            
-            // Unwraps Error
-            // If not available, sends false for Success & nil in BiometricError
             guard let error = error else {
                 return completion(false, type, nil)
             }
-            
-            // Maps error to our BiometricError
+        
             return completion(false, type, biometricError(from: error))
         }
-        
-        // Context can evaluate the Policy
         completion(true, biometricType(for: context.biometryType), nil)
     }
     
     func evaluate(completion: @escaping (Bool, BiometricError?) -> Void) {
-        // Asks Context to evaluate a Policy with a LocalizedReason
         context.evaluatePolicy(policy, localizedReason: localizedReason) { [weak self] success, error in
-            // Moves to the main thread because completion triggers UI changes
             DispatchQueue.main.async {
                 if success {
-                    // Context successfully evaluated the Policy
                     completion(true, nil)
                 } else {
-                    // Unwraps Error
-                    // If not available, sends false for Success & nil for BiometricError
                     guard let error = error else { return completion(false, nil) }
-                    
-                    // Maps error to our BiometricError
                     completion(false, self?.biometricError(from: error as NSError))
                 }
             }

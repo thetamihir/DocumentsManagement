@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E97186C42A0CBEB200C380E8 /* DocumentsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97186C32A0CBEB200C380E8 /* DocumentsPresenter.swift */; };
-		E97186C62A0CC74F00C380E8 /* DocumetsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97186C52A0CC74F00C380E8 /* DocumetsPresenter.swift */; };
 		E97186CE2A0D32A000C380E8 /* DropDown in Frameworks */ = {isa = PBXBuildFile; productRef = E97186CD2A0D32A000C380E8 /* DropDown */; };
+		E97AEC8C2A0DF78500E14842 /* DocumetsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97AEC8B2A0DF78500E14842 /* DocumetsPresenter.swift */; };
 		E9C1C97F2A0A0A330078932D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C1C97E2A0A0A330078932D /* AppDelegate.swift */; };
 		E9C1C9812A0A0A330078932D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C1C9802A0A0A330078932D /* SceneDelegate.swift */; };
 		E9C1C9862A0A0A330078932D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9C1C9842A0A0A330078932D /* Main.storyboard */; };
@@ -25,8 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E97186C32A0CBEB200C380E8 /* DocumentsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsPresenter.swift; sourceTree = "<group>"; };
-		E97186C52A0CC74F00C380E8 /* DocumetsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumetsPresenter.swift; sourceTree = "<group>"; };
+		E97AEC8B2A0DF78500E14842 /* DocumetsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumetsPresenter.swift; sourceTree = "<group>"; };
 		E9C1C97B2A0A0A330078932D /* DocumentManagementSystem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DocumentManagementSystem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9C1C97E2A0A0A330078932D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9C1C9802A0A0A330078932D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -126,7 +124,6 @@
 			children = (
 				E9C1C99E2A0A59BD0078932D /* DocumentryTableViewCell.swift */,
 				E9C1C9A02A0A59E20078932D /* DocumentryTableViewController.swift */,
-				E97186C32A0CBEB200C380E8 /* DocumentsPresenter.swift */,
 			);
 			path = AddDocumentry;
 			sourceTree = "<group>";
@@ -144,7 +141,7 @@
 			children = (
 				E9D4949D2A0A87340000DB7D /* DetailesViewController.swift */,
 				E9D4949F2A0A876E0000DB7D /* DetailsTableViewCell.swift */,
-				E97186C52A0CC74F00C380E8 /* DocumetsPresenter.swift */,
+				E97AEC8B2A0DF78500E14842 /* DocumetsPresenter.swift */,
 			);
 			path = Documentry;
 			sourceTree = "<group>";
@@ -227,10 +224,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9D494A02A0A876E0000DB7D /* DetailsTableViewCell.swift in Sources */,
-				E97186C62A0CC74F00C380E8 /* DocumetsPresenter.swift in Sources */,
 				E9C1C9992A0A1F560078932D /* BiometricAuth.swift in Sources */,
+				E97AEC8C2A0DF78500E14842 /* DocumetsPresenter.swift in Sources */,
 				E9C1C97F2A0A0A330078932D /* AppDelegate.swift in Sources */,
-				E97186C42A0CBEB200C380E8 /* DocumentsPresenter.swift in Sources */,
 				E9D4949E2A0A87340000DB7D /* DetailesViewController.swift in Sources */,
 				E9C1C99F2A0A59BD0078932D /* DocumentryTableViewCell.swift in Sources */,
 				E9C1C9892A0A0A330078932D /* DocumentManagementSystem.xcdatamodeld in Sources */,

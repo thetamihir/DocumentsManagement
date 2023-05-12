@@ -13,6 +13,7 @@ class DocumentryTableViewController: UITableViewController {
         super.viewDidLoad()
         title = "Directories"
         Manager.share.storeDirectory()
+        biomericAuth()
     }
     
     @IBAction func addFolderPress(_ sender: UIBarButtonItem) {
@@ -104,10 +105,6 @@ extension DocumentryTableViewController {
 
 }
     
-   
-
-
-
 extension UIViewController {
     func alert(title: String, message: String, okActionTitle: String) {
         let alertView = UIAlertController(title: title,

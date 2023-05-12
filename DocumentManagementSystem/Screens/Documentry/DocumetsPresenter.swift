@@ -17,7 +17,7 @@ class DocumetsPresenter{
     
     func subDirectorys(url : URL){
         do {
-            DocumetsPresenter.obj.detailes =  try  FileManager.default.contentsOfDirectory(at: url, includingPropertiesForKeys: [.nameKey, .fileSizeKey] , options: .skipsHiddenFiles)
+            DocumetsPresenter.obj.detailes =  try  FileManager.default.contentsOfDirectory(at: url, includingPropertiesForKeys: [.nameKey, .fileSizeKey ] , options: .skipsHiddenFiles)
         } catch  {
             print(error)
         }

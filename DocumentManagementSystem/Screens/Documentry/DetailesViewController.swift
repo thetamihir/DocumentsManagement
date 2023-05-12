@@ -38,12 +38,12 @@ class DetailesTableViewController: UITableViewController{
             return
         }
         DocumetsPresenter.obj.subDirectorys(url: url)
-        setUpMenu()
+        //setUpMenu()
        
     }
     
     @IBAction func copybtnPress(_ sender: UIBarButtonItem) {
-        menu.show()
+        //menu.show()
     }
         
     @IBAction func addDocumentsPress(_ sender: UIBarButtonItem) {
