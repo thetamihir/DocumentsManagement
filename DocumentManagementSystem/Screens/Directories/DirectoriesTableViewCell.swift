@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DocumentryTableViewCell: UITableViewCell {
+class DirectoriesTableViewCell: UITableViewCell {
 
     
     @IBOutlet weak var nameLable: UILabel!

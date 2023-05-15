@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E97186CE2A0D32A000C380E8 /* DropDown in Frameworks */ = {isa = PBXBuildFile; productRef = E97186CD2A0D32A000C380E8 /* DropDown */; };
+		E96753082A11F50800D3B5FA /* CopyURLS+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96753062A11F50800D3B5FA /* CopyURLS+CoreDataClass.swift */; };
+		E96753092A11F50800D3B5FA /* CopyURLS+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96753072A11F50800D3B5FA /* CopyURLS+CoreDataProperties.swift */; };
+		E967530D2A11F55A00D3B5FA /* DatabaseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E967530C2A11F55A00D3B5FA /* DatabaseHandler.swift */; };
+		E967530F2A11F59200D3B5FA /* PersistanceStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E967530E2A11F59200D3B5FA /* PersistanceStorage.swift */; };
+		E96753112A123DAF00D3B5FA /* DirectoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96753102A123DAF00D3B5FA /* DirectoryPresenter.swift */; };
 		E97AEC8C2A0DF78500E14842 /* DocumetsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97AEC8B2A0DF78500E14842 /* DocumetsPresenter.swift */; };
 		E9C1C97F2A0A0A330078932D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C1C97E2A0A0A330078932D /* AppDelegate.swift */; };
 		E9C1C9812A0A0A330078932D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C1C9802A0A0A330078932D /* SceneDelegate.swift */; };
@@ -16,14 +20,19 @@
 		E9C1C98B2A0A0A340078932D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9C1C98A2A0A0A340078932D /* Assets.xcassets */; };
 		E9C1C98E2A0A0A340078932D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9C1C98C2A0A0A340078932D /* LaunchScreen.storyboard */; };
 		E9C1C9992A0A1F560078932D /* BiometricAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C1C9982A0A1F560078932D /* BiometricAuth.swift */; };
-		E9C1C99F2A0A59BD0078932D /* DocumentryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C1C99E2A0A59BD0078932D /* DocumentryTableViewCell.swift */; };
-		E9C1C9A12A0A59E20078932D /* DocumentryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C1C9A02A0A59E20078932D /* DocumentryTableViewController.swift */; };
+		E9C1C99F2A0A59BD0078932D /* DirectoriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C1C99E2A0A59BD0078932D /* DirectoriesTableViewCell.swift */; };
+		E9C1C9A12A0A59E20078932D /* DirectoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C1C9A02A0A59E20078932D /* DirectoriesTableViewController.swift */; };
 		E9D3471F2A0B60E8000FE527 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D3471E2A0B60E8000FE527 /* Manager.swift */; };
-		E9D4949E2A0A87340000DB7D /* DetailesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D4949D2A0A87340000DB7D /* DetailesViewController.swift */; };
-		E9D494A02A0A876E0000DB7D /* DetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D4949F2A0A876E0000DB7D /* DetailsTableViewCell.swift */; };
+		E9D4949E2A0A87340000DB7D /* DocumentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D4949D2A0A87340000DB7D /* DocumentsTableViewController.swift */; };
+		E9D494A02A0A876E0000DB7D /* DocumentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D4949F2A0A876E0000DB7D /* DocumentsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E96753062A11F50800D3B5FA /* CopyURLS+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CopyURLS+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E96753072A11F50800D3B5FA /* CopyURLS+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CopyURLS+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E967530C2A11F55A00D3B5FA /* DatabaseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHandler.swift; sourceTree = "<group>"; };
+		E967530E2A11F59200D3B5FA /* PersistanceStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceStorage.swift; sourceTree = "<group>"; };
+		E96753102A123DAF00D3B5FA /* DirectoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryPresenter.swift; sourceTree = "<group>"; };
 		E97AEC8B2A0DF78500E14842 /* DocumetsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumetsPresenter.swift; sourceTree = "<group>"; };
 		E9C1C97B2A0A0A330078932D /* DocumentManagementSystem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DocumentManagementSystem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9C1C97E2A0A0A330078932D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -34,11 +43,11 @@
 		E9C1C98D2A0A0A340078932D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E9C1C98F2A0A0A340078932D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E9C1C9982A0A1F560078932D /* BiometricAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricAuth.swift; sourceTree = "<group>"; };
-		E9C1C99E2A0A59BD0078932D /* DocumentryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentryTableViewCell.swift; sourceTree = "<group>"; };
-		E9C1C9A02A0A59E20078932D /* DocumentryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentryTableViewController.swift; sourceTree = "<group>"; };
+		E9C1C99E2A0A59BD0078932D /* DirectoriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoriesTableViewCell.swift; sourceTree = "<group>"; };
+		E9C1C9A02A0A59E20078932D /* DirectoriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoriesTableViewController.swift; sourceTree = "<group>"; };
 		E9D3471E2A0B60E8000FE527 /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
-		E9D4949D2A0A87340000DB7D /* DetailesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailesViewController.swift; sourceTree = "<group>"; };
-		E9D4949F2A0A876E0000DB7D /* DetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableViewCell.swift; sourceTree = "<group>"; };
+		E9D4949D2A0A87340000DB7D /* DocumentsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsTableViewController.swift; sourceTree = "<group>"; };
+		E9D4949F2A0A876E0000DB7D /* DocumentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,13 +55,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E97186CE2A0D32A000C380E8 /* DropDown in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E967530A2A11F51600D3B5FA /* Coredata */ = {
+			isa = PBXGroup;
+			children = (
+				E96753062A11F50800D3B5FA /* CopyURLS+CoreDataClass.swift */,
+				E96753072A11F50800D3B5FA /* CopyURLS+CoreDataProperties.swift */,
+				E967530E2A11F59200D3B5FA /* PersistanceStorage.swift */,
+			);
+			path = Coredata;
+			sourceTree = "<group>";
+		};
+		E967530B2A11F54800D3B5FA /* DatabaeHandler */ = {
+			isa = PBXGroup;
+			children = (
+				E967530C2A11F55A00D3B5FA /* DatabaseHandler.swift */,
+			);
+			path = DatabaeHandler;
+			sourceTree = "<group>";
+		};
 		E9C1C9722A0A0A320078932D = {
 			isa = PBXGroup;
 			children = (
@@ -72,10 +98,12 @@
 		E9C1C97D2A0A0A330078932D /* DocumentManagementSystem */ = {
 			isa = PBXGroup;
 			children = (
+				E9C1C9952A0A0A480078932D /* Application */,
+				E967530B2A11F54800D3B5FA /* DatabaeHandler */,
+				E967530A2A11F51600D3B5FA /* Coredata */,
 				E9D3471B2A0B514C000FE527 /* FileManager */,
 				E9C1C99A2A0A2C880078932D /* BoimatricAuth */,
 				E9C1C9972A0A1EF70078932D /* Screens */,
-				E9C1C9952A0A0A480078932D /* Application */,
 				E9C1C9962A0A0A5B0078932D /* StoryBoard */,
 				E9C1C98A2A0A0A340078932D /* Assets.xcassets */,
 				E9C1C98F2A0A0A340078932D /* Info.plist */,
@@ -105,8 +133,8 @@
 		E9C1C9972A0A1EF70078932D /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				E9D4949C2A0A870A0000DB7D /* Documentry */,
-				E9C1C99D2A0A599F0078932D /* AddDocumentry */,
+				E9D4949C2A0A870A0000DB7D /* Documents */,
+				E9C1C99D2A0A599F0078932D /* Directories */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -119,13 +147,14 @@
 			path = BoimatricAuth;
 			sourceTree = "<group>";
 		};
-		E9C1C99D2A0A599F0078932D /* AddDocumentry */ = {
+		E9C1C99D2A0A599F0078932D /* Directories */ = {
 			isa = PBXGroup;
 			children = (
-				E9C1C99E2A0A59BD0078932D /* DocumentryTableViewCell.swift */,
-				E9C1C9A02A0A59E20078932D /* DocumentryTableViewController.swift */,
+				E9C1C99E2A0A59BD0078932D /* DirectoriesTableViewCell.swift */,
+				E9C1C9A02A0A59E20078932D /* DirectoriesTableViewController.swift */,
+				E96753102A123DAF00D3B5FA /* DirectoryPresenter.swift */,
 			);
-			path = AddDocumentry;
+			path = Directories;
 			sourceTree = "<group>";
 		};
 		E9D3471B2A0B514C000FE527 /* FileManager */ = {
@@ -136,14 +165,14 @@
 			path = FileManager;
 			sourceTree = "<group>";
 		};
-		E9D4949C2A0A870A0000DB7D /* Documentry */ = {
+		E9D4949C2A0A870A0000DB7D /* Documents */ = {
 			isa = PBXGroup;
 			children = (
-				E9D4949D2A0A87340000DB7D /* DetailesViewController.swift */,
-				E9D4949F2A0A876E0000DB7D /* DetailsTableViewCell.swift */,
+				E9D4949D2A0A87340000DB7D /* DocumentsTableViewController.swift */,
+				E9D4949F2A0A876E0000DB7D /* DocumentsTableViewCell.swift */,
 				E97AEC8B2A0DF78500E14842 /* DocumetsPresenter.swift */,
 			);
-			path = Documentry;
+			path = Documents;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,7 +192,6 @@
 			);
 			name = DocumentManagementSystem;
 			packageProductDependencies = (
-				E97186CD2A0D32A000C380E8 /* DropDown */,
 			);
 			productName = DocumentManagementSystem;
 			productReference = E9C1C97B2A0A0A330078932D /* DocumentManagementSystem.app */;
@@ -194,7 +222,6 @@
 			);
 			mainGroup = E9C1C9722A0A0A320078932D;
 			packageReferences = (
-				E97186CC2A0D32A000C380E8 /* XCRemoteSwiftPackageReference "DropDown" */,
 			);
 			productRefGroup = E9C1C97C2A0A0A330078932D /* Products */;
 			projectDirPath = "";
@@ -223,15 +250,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9D494A02A0A876E0000DB7D /* DetailsTableViewCell.swift in Sources */,
+				E9D494A02A0A876E0000DB7D /* DocumentsTableViewCell.swift in Sources */,
 				E9C1C9992A0A1F560078932D /* BiometricAuth.swift in Sources */,
 				E97AEC8C2A0DF78500E14842 /* DocumetsPresenter.swift in Sources */,
+				E967530F2A11F59200D3B5FA /* PersistanceStorage.swift in Sources */,
+				E967530D2A11F55A00D3B5FA /* DatabaseHandler.swift in Sources */,
 				E9C1C97F2A0A0A330078932D /* AppDelegate.swift in Sources */,
-				E9D4949E2A0A87340000DB7D /* DetailesViewController.swift in Sources */,
-				E9C1C99F2A0A59BD0078932D /* DocumentryTableViewCell.swift in Sources */,
+				E9D4949E2A0A87340000DB7D /* DocumentsTableViewController.swift in Sources */,
+				E9C1C99F2A0A59BD0078932D /* DirectoriesTableViewCell.swift in Sources */,
 				E9C1C9892A0A0A330078932D /* DocumentManagementSystem.xcdatamodeld in Sources */,
 				E9C1C9812A0A0A330078932D /* SceneDelegate.swift in Sources */,
-				E9C1C9A12A0A59E20078932D /* DocumentryTableViewController.swift in Sources */,
+				E96753112A123DAF00D3B5FA /* DirectoryPresenter.swift in Sources */,
+				E96753092A11F50800D3B5FA /* CopyURLS+CoreDataProperties.swift in Sources */,
+				E96753082A11F50800D3B5FA /* CopyURLS+CoreDataClass.swift in Sources */,
+				E9C1C9A12A0A59E20078932D /* DirectoriesTableViewController.swift in Sources */,
 				E9D3471F2A0B60E8000FE527 /* Manager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -454,25 +486,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		E97186CC2A0D32A000C380E8 /* XCRemoteSwiftPackageReference "DropDown" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/AssistoLab/DropDown";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		E97186CD2A0D32A000C380E8 /* DropDown */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E97186CC2A0D32A000C380E8 /* XCRemoteSwiftPackageReference "DropDown" */;
-			productName = DropDown;
-		};
-/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		E9C1C9872A0A0A330078932D /* DocumentManagementSystem.xcdatamodeld */ = {

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetailsTableViewCell: UITableViewCell {
+class DocumentsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var thumbnailImg: UIImageView!
     @IBOutlet weak var nameLable: UILabel!

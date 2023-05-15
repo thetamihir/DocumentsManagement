@@ -6,26 +6,31 @@
 //
 
 import Foundation
-
-
 class Manager {
+    
     var copyurls = [URL]()
     var directoryUrls = [URL]()
     static let share = Manager()
     
     var documentsDirectoryURL: URL {
-           return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-       }
+        return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+    }
     
     func createDirectory(name : String , complation : (Bool) -> Void){
-        do {
-            let documentsDirectory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
-            let directoryURL = documentsDirectory.appendingPathComponent(name)
-            try FileManager.default.createDirectory(at: directoryURL, withIntermediateDirectories: true , attributes: nil)
-            complation(true)
-        } catch  {
-          complation(false)
+        let url =  documentsDirectoryURL.appendingPathComponent(name)
+        if FileManager.default.fileExists(atPath: url.path ){
+            complation(false)
         }
+        else {
+            do {
+                let directoryURL = documentsDirectoryURL.appendingPathComponent(name)
+                try FileManager.default.createDirectory(at: directoryURL, withIntermediateDirectories: true , attributes: nil)
+                complation(true)
+            } catch  {
+                print(error)
+            }
+        }
+       
     }
     
     func getDirectory() -> [URL] {
@@ -37,9 +42,9 @@ class Manager {
         }
         return directoryUrls
     }
-
     
-    func Delelte(url : URL) {
+    
+    func deleteIteams(url : URL) {
         do {
             try FileManager.default.removeItem(at: url)
         } catch  {
@@ -51,4 +56,31 @@ class Manager {
     func storeDirectory() {
         directoryUrls = getDirectory()
     }
+    
+    func pasteDocuments(desurl : URL , addcomponet : String){
+        
+        let sourceurl = documentsDirectoryURL.appendingPathComponent(addcomponet)
+        let lastcom = sourceurl.lastPathComponent
+        let finalurl = desurl.appendingPathComponent(lastcom)
+        do {
+            try FileManager.default.copyItem(at: sourceurl, to: finalurl)
+            DocumetsPresenter.obj.documentsFiles.append(finalurl)
+        } catch  {
+            print(error)
+        }
+    }
+    
+    
+    func saveURLs(url : URL) -> String {
+        var stringurl : String? = nil
+        let pathComponents = url.pathComponents
+        if pathComponents.count >= 2 {
+            let secondLastComponent = pathComponents[pathComponents.count - 2]
+            let lastComponent = url.lastPathComponent
+            stringurl = "\(secondLastComponent)/\(lastComponent)"
+            
+        }
+        return stringurl ?? ""
+    }
+    
 }
