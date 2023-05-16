@@ -11,8 +11,9 @@
 		E96753092A11F50800D3B5FA /* CopyURLS+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96753072A11F50800D3B5FA /* CopyURLS+CoreDataProperties.swift */; };
 		E967530D2A11F55A00D3B5FA /* DatabaseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E967530C2A11F55A00D3B5FA /* DatabaseHandler.swift */; };
 		E967530F2A11F59200D3B5FA /* PersistanceStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E967530E2A11F59200D3B5FA /* PersistanceStorage.swift */; };
-		E96753112A123DAF00D3B5FA /* DirectoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96753102A123DAF00D3B5FA /* DirectoryPresenter.swift */; };
 		E97AEC8C2A0DF78500E14842 /* DocumetsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97AEC8B2A0DF78500E14842 /* DocumetsPresenter.swift */; };
+		E9A52C392A13A03D0098E0FF /* ReusebleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9A52C382A13A03D0098E0FF /* ReusebleView.xib */; };
+		E9A52C3B2A13A05A0098E0FF /* ReusebleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A52C3A2A13A05A0098E0FF /* ReusebleView.swift */; };
 		E9C1C97F2A0A0A330078932D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C1C97E2A0A0A330078932D /* AppDelegate.swift */; };
 		E9C1C9812A0A0A330078932D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C1C9802A0A0A330078932D /* SceneDelegate.swift */; };
 		E9C1C9862A0A0A330078932D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9C1C9842A0A0A330078932D /* Main.storyboard */; };
@@ -22,9 +23,12 @@
 		E9C1C9992A0A1F560078932D /* BiometricAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C1C9982A0A1F560078932D /* BiometricAuth.swift */; };
 		E9C1C99F2A0A59BD0078932D /* DirectoriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C1C99E2A0A59BD0078932D /* DirectoriesTableViewCell.swift */; };
 		E9C1C9A12A0A59E20078932D /* DirectoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C1C9A02A0A59E20078932D /* DirectoriesTableViewController.swift */; };
-		E9D3471F2A0B60E8000FE527 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D3471E2A0B60E8000FE527 /* Manager.swift */; };
+		E9D3471F2A0B60E8000FE527 /* DirectoriesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D3471E2A0B60E8000FE527 /* DirectoriesPresenter.swift */; };
 		E9D4949E2A0A87340000DB7D /* DocumentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D4949D2A0A87340000DB7D /* DocumentsTableViewController.swift */; };
 		E9D494A02A0A876E0000DB7D /* DocumentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D4949F2A0A876E0000DB7D /* DocumentsTableViewCell.swift */; };
+		E9D8E89F2A134B6A0080EBC4 /* Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8E89E2A134B6A0080EBC4 /* Extenstion.swift */; };
+		E9D8E8A22A1386F00080EBC4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8E8A12A1386F00080EBC4 /* Constants.swift */; };
+		E9D8E8A42A1388E80080EBC4 /* BiometricSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8E8A32A1388E80080EBC4 /* BiometricSupport.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,8 +36,9 @@
 		E96753072A11F50800D3B5FA /* CopyURLS+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CopyURLS+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E967530C2A11F55A00D3B5FA /* DatabaseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHandler.swift; sourceTree = "<group>"; };
 		E967530E2A11F59200D3B5FA /* PersistanceStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceStorage.swift; sourceTree = "<group>"; };
-		E96753102A123DAF00D3B5FA /* DirectoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryPresenter.swift; sourceTree = "<group>"; };
 		E97AEC8B2A0DF78500E14842 /* DocumetsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumetsPresenter.swift; sourceTree = "<group>"; };
+		E9A52C382A13A03D0098E0FF /* ReusebleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReusebleView.xib; sourceTree = "<group>"; };
+		E9A52C3A2A13A05A0098E0FF /* ReusebleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusebleView.swift; sourceTree = "<group>"; };
 		E9C1C97B2A0A0A330078932D /* DocumentManagementSystem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DocumentManagementSystem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9C1C97E2A0A0A330078932D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9C1C9802A0A0A330078932D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,9 +50,12 @@
 		E9C1C9982A0A1F560078932D /* BiometricAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricAuth.swift; sourceTree = "<group>"; };
 		E9C1C99E2A0A59BD0078932D /* DirectoriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoriesTableViewCell.swift; sourceTree = "<group>"; };
 		E9C1C9A02A0A59E20078932D /* DirectoriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoriesTableViewController.swift; sourceTree = "<group>"; };
-		E9D3471E2A0B60E8000FE527 /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
+		E9D3471E2A0B60E8000FE527 /* DirectoriesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoriesPresenter.swift; sourceTree = "<group>"; };
 		E9D4949D2A0A87340000DB7D /* DocumentsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsTableViewController.swift; sourceTree = "<group>"; };
 		E9D4949F2A0A876E0000DB7D /* DocumentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsTableViewCell.swift; sourceTree = "<group>"; };
+		E9D8E89E2A134B6A0080EBC4 /* Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extenstion.swift; sourceTree = "<group>"; };
+		E9D8E8A12A1386F00080EBC4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E9D8E8A32A1388E80080EBC4 /* BiometricSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricSupport.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,11 +106,14 @@
 		E9C1C97D2A0A0A330078932D /* DocumentManagementSystem */ = {
 			isa = PBXGroup;
 			children = (
+				E9D8E8A72A139A7A0080EBC4 /* ReusebleView */,
+				E9D8E8A02A1386E20080EBC4 /* Constents */,
+				E9D8E89B2A133ECB0080EBC4 /* Extension */,
 				E9C1C9952A0A0A480078932D /* Application */,
 				E967530B2A11F54800D3B5FA /* DatabaeHandler */,
 				E967530A2A11F51600D3B5FA /* Coredata */,
-				E9D3471B2A0B514C000FE527 /* FileManager */,
 				E9C1C99A2A0A2C880078932D /* BoimatricAuth */,
+				E9D3471B2A0B514C000FE527 /* FileManager */,
 				E9C1C9972A0A1EF70078932D /* Screens */,
 				E9C1C9962A0A0A5B0078932D /* StoryBoard */,
 				E9C1C98A2A0A0A340078932D /* Assets.xcassets */,
@@ -143,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				E9C1C9982A0A1F560078932D /* BiometricAuth.swift */,
+				E9D8E8A32A1388E80080EBC4 /* BiometricSupport.swift */,
 			);
 			path = BoimatricAuth;
 			sourceTree = "<group>";
@@ -152,7 +164,7 @@
 			children = (
 				E9C1C99E2A0A59BD0078932D /* DirectoriesTableViewCell.swift */,
 				E9C1C9A02A0A59E20078932D /* DirectoriesTableViewController.swift */,
-				E96753102A123DAF00D3B5FA /* DirectoryPresenter.swift */,
+				E9D3471E2A0B60E8000FE527 /* DirectoriesPresenter.swift */,
 			);
 			path = Directories;
 			sourceTree = "<group>";
@@ -160,7 +172,6 @@
 		E9D3471B2A0B514C000FE527 /* FileManager */ = {
 			isa = PBXGroup;
 			children = (
-				E9D3471E2A0B60E8000FE527 /* Manager.swift */,
 			);
 			path = FileManager;
 			sourceTree = "<group>";
@@ -173,6 +184,31 @@
 				E97AEC8B2A0DF78500E14842 /* DocumetsPresenter.swift */,
 			);
 			path = Documents;
+			sourceTree = "<group>";
+		};
+		E9D8E89B2A133ECB0080EBC4 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E9D8E89E2A134B6A0080EBC4 /* Extenstion.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		E9D8E8A02A1386E20080EBC4 /* Constents */ = {
+			isa = PBXGroup;
+			children = (
+				E9D8E8A12A1386F00080EBC4 /* Constants.swift */,
+			);
+			path = Constents;
+			sourceTree = "<group>";
+		};
+		E9D8E8A72A139A7A0080EBC4 /* ReusebleView */ = {
+			isa = PBXGroup;
+			children = (
+				E9A52C382A13A03D0098E0FF /* ReusebleView.xib */,
+				E9A52C3A2A13A05A0098E0FF /* ReusebleView.swift */,
+			);
+			path = ReusebleView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,6 +276,7 @@
 				E9C1C98E2A0A0A340078932D /* LaunchScreen.storyboard in Resources */,
 				E9C1C98B2A0A0A340078932D /* Assets.xcassets in Resources */,
 				E9C1C9862A0A0A330078932D /* Main.storyboard in Resources */,
+				E9A52C392A13A03D0098E0FF /* ReusebleView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,16 +292,19 @@
 				E97AEC8C2A0DF78500E14842 /* DocumetsPresenter.swift in Sources */,
 				E967530F2A11F59200D3B5FA /* PersistanceStorage.swift in Sources */,
 				E967530D2A11F55A00D3B5FA /* DatabaseHandler.swift in Sources */,
+				E9D8E89F2A134B6A0080EBC4 /* Extenstion.swift in Sources */,
 				E9C1C97F2A0A0A330078932D /* AppDelegate.swift in Sources */,
 				E9D4949E2A0A87340000DB7D /* DocumentsTableViewController.swift in Sources */,
 				E9C1C99F2A0A59BD0078932D /* DirectoriesTableViewCell.swift in Sources */,
 				E9C1C9892A0A0A330078932D /* DocumentManagementSystem.xcdatamodeld in Sources */,
 				E9C1C9812A0A0A330078932D /* SceneDelegate.swift in Sources */,
-				E96753112A123DAF00D3B5FA /* DirectoryPresenter.swift in Sources */,
+				E9A52C3B2A13A05A0098E0FF /* ReusebleView.swift in Sources */,
+				E9D8E8A22A1386F00080EBC4 /* Constants.swift in Sources */,
 				E96753092A11F50800D3B5FA /* CopyURLS+CoreDataProperties.swift in Sources */,
+				E9D8E8A42A1388E80080EBC4 /* BiometricSupport.swift in Sources */,
 				E96753082A11F50800D3B5FA /* CopyURLS+CoreDataClass.swift in Sources */,
 				E9C1C9A12A0A59E20078932D /* DirectoriesTableViewController.swift in Sources */,
-				E9D3471F2A0B60E8000FE527 /* Manager.swift in Sources */,
+				E9D3471F2A0B60E8000FE527 /* DirectoriesPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

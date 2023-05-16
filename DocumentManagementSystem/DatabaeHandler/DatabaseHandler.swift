@@ -13,14 +13,7 @@ class DatabaseHandler {
     static let database = DatabaseHandler()
     let contex = PersistanceStorage.share.persistentContainer.viewContext
     
-    func add<T : NSManagedObject> (_ type : T.Type) -> T? {
-        guard let entityName = T.entity().name else{return nil}
-        guard let entity = NSEntityDescription.entity(forEntityName: entityName, in: contex) else {return nil}
-        let object  = T(entity: entity, insertInto: contex)
-        return object
-        
-    }
-    
+
     func fetch <T : NSManagedObject> (_ type : T.Type) -> [T] {
         let request = T.fetchRequest()
         do {

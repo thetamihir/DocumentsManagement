@@ -58,6 +58,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="ajE-dr-XKU">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="info.bubble.fill" catalog="system" id="Dx7-61-Qaq">
+                            <connections>
+                                <action selector="showStorageInfo:" destination="Oae-LJ-hKg" id="0kr-kr-5bx"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="sU3-OF-KNb">
                             <connections>
                                 <action selector="addFolderPress:" destination="Oae-LJ-hKg" id="MXm-eW-VVN"/>
@@ -70,7 +75,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wJG-RI-BPw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1440" y="-197"/>
+            <point key="canvasLocation" x="1438.9312977099237" y="-197.18309859154931"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="a8r-Vh-gu0">
@@ -157,9 +162,6 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="copyBtnPress" destination="TVi-kJ-wa7" id="ic7-Bl-kuw"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qpc-us-KVb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -170,6 +172,7 @@
         <image name="doc.on.clipboard.fill" catalog="system" width="116" height="128"/>
         <image name="ellipsis.circle" catalog="system" width="128" height="123"/>
         <image name="folder.fill" catalog="system" width="128" height="96"/>
+        <image name="info.bubble.fill" catalog="system" width="128" height="110"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -11,7 +11,6 @@ import Foundation
 class DocumetsPresenter{
    
     static let obj = DocumetsPresenter()
-    let sizeofFile = 1024 * 1024 * 1024
     var documentsFiles = [URL]()
     var copyurls = [URL]()
     
@@ -24,17 +23,27 @@ class DocumetsPresenter{
         }
     }
     
-    func checkLimit(selectedURL : URL, destinationURL : URL , fileSize : Int , completion : (Bool) -> Void) {
+    
+    func checkStorage(selectedFile : Int , storagesize : Int , completion : (Bool) -> Void){
+        if ((selectedFile + storagesize) < Constants.storageLimit){
+            completion(true)
+        }else{
+            completion(false)
+        }
+    }
+    
+    func checkLimit(selectedURL : URL, destinationURL : URL , fileSize : Int , completion : (Result<Bool , SelectionError>) -> Void) {
         let finalURl = destinationURL.appendingPathComponent(selectedURL.lastPathComponent)
-        if (fileSize < sizeofFile) {
+        if (fileSize < Constants.storageLimit ) {
             if FileManager.default.fileExists(atPath: finalURl.path) {
-                print("Already exists! Do nothing")
+                //print("Already exists! Do nothing")
+                completion(.failure(.fileExist(message: "file is alredy exist")))
             }
             else {
                 do {
                     try FileManager.default.copyItem(at: selectedURL, to: finalURl)
                     self.documentsFiles.append(finalURl)
-                    completion(true)
+                    completion(.success(true))
                 }
                 catch {
                     print("Error: \(error)")
@@ -42,10 +51,30 @@ class DocumetsPresenter{
             }
         }
         else{
-            completion(false)
+            completion(.failure(.fileSize(message: "file size is large")))
         }
     }
     
+    
+    
+    func pasteDocuments(desurl : URL , addcomponet : String , complation : (Bool) -> Void ){
+        let sourceurl =  Constants.documentsDirectoryURL.appendingPathComponent(addcomponet)
+        let lastcom = sourceurl.lastPathComponent
+        let finalurl = desurl.appendingPathComponent(lastcom)
+        do {
+            if FileManager.default.fileExists(atPath: finalurl.path){
+                complation(false)
+            }else{
+                try FileManager.default.copyItem(at: sourceurl, to: finalurl)
+                DocumetsPresenter.obj.documentsFiles.append(finalurl)
+                complation(true)
+            }
+        } catch  {
+            print(error)
+        }
+    }
+    
+
 
     func copyOperation(indexPath : [IndexPath]){
         
@@ -55,7 +84,7 @@ class DocumetsPresenter{
     
         for data in DocumetsPresenter.obj.copyurls {
              let copyurl = CopyURLS(context: DatabaseHandler.database.contex)
-             copyurl.copyurls = Manager.share.saveURLs(url: data)
+             copyurl.copyurls = DirectoriesPresenter.share.saveURLs(url: data)
              DatabaseHandler.database.save()
         }
     }
@@ -68,4 +97,9 @@ class DocumetsPresenter{
             print(error.localizedDescription)
         }
     }
+}
+
+enum SelectionError : Error {
+    case fileExist(message : String)
+    case fileSize(message : String)
 }

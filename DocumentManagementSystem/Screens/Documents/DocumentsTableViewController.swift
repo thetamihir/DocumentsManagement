@@ -15,15 +15,11 @@ class DocumentsTableViewController: UITableViewController, UIGestureRecognizerDe
     var desUrl : URL? = nil
     var copy = true
     var selected = false
-    var move = false
-    var moveurl : URL?
     @IBOutlet weak var copyBtnPress: UIBarButtonItem!
-    
-   
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var tapGesture = UILongPressGestureRecognizer(target: self, action: #selector(DocumentsTableViewController.tapEdit(recognizer:)))
+        let tapGesture = UILongPressGestureRecognizer(target: self, action: #selector(DocumentsTableViewController.tapEdit(recognizer:)))
         tableView.addGestureRecognizer(tapGesture)
         tapGesture.delegate = self
     }
@@ -41,7 +37,12 @@ class DocumentsTableViewController: UITableViewController, UIGestureRecognizerDe
     }
         
     @IBAction func addDocumentsPress(_ sender: UIBarButtonItem) {
-         addDocumentPicker()
+        DirectoriesPresenter.share.checkStorage { success in
+            guard success else {return
+                self.alert(title: "storage limit!", message: "please delete some big files", okActionTitle: "cancle")
+            }
+            addDocumentPicker()
+        }
     }
     
     
@@ -80,19 +81,24 @@ extension DocumentsTableViewController {
             }
         }
         cell.nameLable?.text =  DocumetsPresenter.obj.documentsFiles[indexPath.row].lastPathComponent
-        print(DocumetsPresenter.obj.documentsFiles)
        return cell
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             tableView.beginUpdates()
-            Manager.share.deleteIteams(url:  DocumetsPresenter.obj.documentsFiles[indexPath.row])
+            DirectoriesPresenter.share.deleteIteams(url:  DocumetsPresenter.obj.documentsFiles[indexPath.row])
             DocumetsPresenter.obj.documentsFiles.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .automatic)
             tableView.endUpdates()
         }
+        
     }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 65
+    }
+    
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
@@ -134,27 +140,30 @@ extension DocumentsTableViewController : UIDocumentPickerDelegate {
         guard let selectedFileURL = urls.first else {
             return
         }
-        
-        if move{
-//            DocumetsPresenter.obj.moveOperation(selectedurl: selectedFileURL, desurl: moveurl!)
-        }else{
-            do {
-                let fileSize = try selectedFileURL.resourceValues(forKeys: [.fileSizeKey]).fileSize ?? 0
-                print("File size: \(fileSize) bytes")
-                
-                DocumetsPresenter.obj.checkLimit(selectedURL: selectedFileURL, destinationURL: desUrl! , fileSize: fileSize) { success in
-                    if success {
+        do {
+            let fileSize = try selectedFileURL.resourceValues(forKeys: [.fileSizeKey]).fileSize ?? 0
+            print("File size: \(fileSize) bytes")
+            guard let storagesize =  FileManager.default.directorySize( Constants.documentsDirectoryURL) else {return}
+            
+            DocumetsPresenter.obj.checkStorage(selectedFile: fileSize, storagesize: storagesize) { success in
+                guard success else { return
+                    alert(title: "Storage Limits", message: "your storage is almostfull!", okActionTitle: "OK")
+                }
+                DocumetsPresenter.obj.checkLimit(selectedURL: selectedFileURL, destinationURL: desUrl!, fileSize: fileSize) { response in
+                    switch response {
+                    case .success :
                         tableView.reloadData()
-                    }
-                    else{
-                        alert(title: "File size limit Exceedded", message: "Please select file(s) smaller than 1 GB.", okActionTitle: "OK")
+                    case .failure(let error) :
+                        print(error)
+                        alert(title: "Alert", message: "file is already exist" , okActionTitle: "OK")
                     }
                 }
             }
-            catch {
-                print(error.localizedDescription)
-            }
         }
+        catch {
+            print(error.localizedDescription)
+        }
+        
         
     }
     
@@ -213,11 +222,22 @@ extension DocumentsTableViewController {
         
         let pasteButton = UIAlertAction(title: "Paste", style: .default) { action in
             print("paste")
-            let geturlPath = DatabaseHandler.database.fetch(CopyURLS.self)
-            for path in geturlPath {
-                Manager.share.pasteDocuments(desurl: self.desUrl!, addcomponet: path.copyurls!)
-                self.tableView.reloadData()
+            
+            DirectoriesPresenter.share.checkStorage { success in
+                guard success else {return
+                    self.alert(title: "storage limit!", message: "please delete some big files", okActionTitle: "cancle")
+                }
+                let geturlPath = DatabaseHandler.database.fetch(CopyURLS.self)
+                for path in geturlPath {
+                    DocumetsPresenter.obj.pasteDocuments(desurl: self.desUrl!, addcomponet: path.copyurls!){success in
+                        guard success else {return
+                            self.alert(title: "Alert", message: "Some files are alredy exist", okActionTitle: "OK")
+                        }
+                        self.tableView.reloadData()
+                    }
+                }
             }
+            
         }
         
         let selectButton = UIAlertAction(title: "Select", style: .default) { action in
@@ -228,14 +248,13 @@ extension DocumentsTableViewController {
             self.tableView.setEditing(true, animated: false)
         }
         
-        let moveButton = UIAlertAction(title: "Move", style: .default){
-            action in
-            self.move = true
-            if let selectedurl  = self.tableView.indexPathsForSelectedRows{
-                self.moveurl = DocumetsPresenter.obj.documentsFiles[selectedurl[0].row]
-            }
-            self.addDocumentPicker()
-        }
+//        let moveButton = UIAlertAction(title: "Move", style: .default){
+//            action in
+//            if let selectedurl  = self.tableView.indexPathsForSelectedRows{
+//                self.moveurl = DocumetsPresenter.obj.documentsFiles[selectedurl[0].row]
+//            }
+//            self.addDocumentPicker()
+//        }
         
         let cancelButton = UIAlertAction(title: "Cancel", style: .cancel) { action in
             print("cancel")
@@ -245,7 +264,7 @@ extension DocumentsTableViewController {
         alertController.addAction(pasteButton)
         alertController.addAction(selectButton)
         alertController.addAction(cancelButton)
-        alertController.addAction(moveButton)
+       // alertController.addAction(moveButton)
         
         self.present(alertController, animated: true, completion: nil)
         

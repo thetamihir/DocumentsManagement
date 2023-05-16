@@ -6,36 +6,33 @@
 //
 
 import Foundation
-class Manager {
+
+class DirectoriesPresenter {
     
     var copyurls = [URL]()
     var directoryUrls = [URL]()
-    static let share = Manager()
     
-    var documentsDirectoryURL: URL {
-        return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-    }
+    static let share = DirectoriesPresenter()
     
     func createDirectory(name : String , complation : (Bool) -> Void){
-        let url =  documentsDirectoryURL.appendingPathComponent(name)
+        let url =  Constants.documentsDirectoryURL.appendingPathComponent(name)
         if FileManager.default.fileExists(atPath: url.path ){
             complation(false)
         }
         else {
             do {
-                let directoryURL = documentsDirectoryURL.appendingPathComponent(name)
+                let directoryURL =  Constants.documentsDirectoryURL.appendingPathComponent(name)
                 try FileManager.default.createDirectory(at: directoryURL, withIntermediateDirectories: true , attributes: nil)
                 complation(true)
             } catch  {
                 print(error)
             }
         }
-       
     }
     
     func getDirectory() -> [URL] {
         do {
-            directoryUrls = try FileManager.default.contentsOfDirectory(at: documentsDirectoryURL, includingPropertiesForKeys: nil, options: .skipsHiddenFiles)
+            directoryUrls = try FileManager.default.contentsOfDirectory(at:  Constants.documentsDirectoryURL, includingPropertiesForKeys: nil, options: .skipsHiddenFiles)
             
         } catch {
             print(error.localizedDescription)
@@ -57,20 +54,6 @@ class Manager {
         directoryUrls = getDirectory()
     }
     
-    func pasteDocuments(desurl : URL , addcomponet : String){
-        
-        let sourceurl = documentsDirectoryURL.appendingPathComponent(addcomponet)
-        let lastcom = sourceurl.lastPathComponent
-        let finalurl = desurl.appendingPathComponent(lastcom)
-        do {
-            try FileManager.default.copyItem(at: sourceurl, to: finalurl)
-            DocumetsPresenter.obj.documentsFiles.append(finalurl)
-        } catch  {
-            print(error)
-        }
-    }
-    
-    
     func saveURLs(url : URL) -> String {
         var stringurl : String? = nil
         let pathComponents = url.pathComponents
@@ -83,4 +66,24 @@ class Manager {
         return stringurl ?? ""
     }
     
+ 
+    func checkStorage(completion : (Bool) -> Void ) {
+        guard let totalfileSize =  FileManager.default.directorySize( Constants.documentsDirectoryURL) else{return}
+        if totalfileSize < Constants.storageLimit{
+            completion(true)
+        }else{
+            completion(false)
+        }
+    }
+    
+    
+    func storageCalculator(usedStorage : Int) -> String{
+        let gb = 1024 * 1024 * 1024
+        let remaningStorage = String(format: "%.2f", Double(Constants.storageLimit - usedStorage) / Double(gb))
+        return remaningStorage
+    }
+    
+    func givesizeOfStorage() -> Int {
+        return FileManager.default.directorySize( Constants.documentsDirectoryURL) ?? 0
+    }
 }
