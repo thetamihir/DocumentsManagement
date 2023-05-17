@@ -17,7 +17,7 @@ extension CopyURLS {
     }
 
     @NSManaged public var copyurls: String?
-    @NSManaged public var urlsize: Int16
+    @NSManaged public var urlsize: Int64
 
 }
 
