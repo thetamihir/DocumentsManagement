@@ -2,7 +2,7 @@
 //  CopyURLS+CoreDataProperties.swift
 //  DocumentManagementSystem
 //
-//  Created by Mihir Shingala on 15/05/23.
+//  Created by Mihir Shingala on 17/05/23.
 //
 //
 
@@ -17,6 +17,7 @@ extension CopyURLS {
     }
 
     @NSManaged public var copyurls: String?
+    @NSManaged public var urlsize: Int16
 
 }
 
