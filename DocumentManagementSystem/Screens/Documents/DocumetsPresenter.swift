@@ -6,14 +6,14 @@
 //
 
 import Foundation
-
+import CoreData
 
 class DocumetsPresenter{
    
     static let obj = DocumetsPresenter()
     var documentsFiles = [URL]()
     var copyurls = [URL]()
-    
+   
     
     func subDirectorys(url : URL){
         do {
@@ -57,10 +57,10 @@ class DocumetsPresenter{
     
     
     
-    func pasteDocuments(desurl : URL , addcomponet : String , complation : (Bool) -> Void ){
-        let sourceurl =  Constants.documentsDirectoryURL.appendingPathComponent(addcomponet)
-        let lastcom = sourceurl.lastPathComponent
-        let finalurl = desurl.appendingPathComponent(lastcom)
+    func pasteDocuments(desurl : URL , addcomponent : String , complation : (Bool) -> Void ){
+        let sourceurl =  Constants.documentsDirectoryURL.appendingPathComponent(addcomponent)
+        let lastcomponent = sourceurl.lastPathComponent
+        let finalurl = desurl.appendingPathComponent(lastcomponent)
         do {
             if FileManager.default.fileExists(atPath: finalurl.path){
                 complation(false)
@@ -74,20 +74,35 @@ class DocumetsPresenter{
         }
     }
     
-
-
+ 
+    
     func copyOperation(indexPath : [IndexPath]){
-        
         for indexpath in indexPath {
             copyurls.append(documentsFiles[indexpath.row])
         }
     
-        for data in DocumetsPresenter.obj.copyurls {
+        for url in self.copyurls {
              let copyurl = CopyURLS(context: DatabaseHandler.database.contex)
-             copyurl.copyurls = DirectoriesPresenter.share.saveURLs(url: data)
+             copyurl.copyurls = self.saveURLs(url: url)
              DatabaseHandler.database.save()
         }
     }
+    
+
+    
+    func saveURLs(url : URL) -> String {
+        var stringurl : String? = nil
+        let pathComponents = url.pathComponents
+        if pathComponents.count >= 2 {
+            let secondLastComponent = pathComponents[pathComponents.count - 2]
+            let lastComponent = url.lastPathComponent
+            stringurl = "\(secondLastComponent)/\(lastComponent)"
+            
+        }
+        return stringurl ?? ""
+    }
+    
+    
     
     func moveOperation (selectedurl : URL , desurl : URL) {
         do {
@@ -95,6 +110,15 @@ class DocumetsPresenter{
             self.documentsFiles.append(desurl)
         } catch  {
             print(error.localizedDescription)
+        }
+    }
+    
+    // Mark :- database functions
+        
+    func deleteCopyURLS() {
+        let data  = DatabaseHandler.database.fetch(CopyURLS.self)
+        for data in data {
+            DatabaseHandler.database.delete(object: data)
         }
     }
 }

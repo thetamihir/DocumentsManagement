@@ -151,7 +151,7 @@
                         <rightBarButtonItems>
                             <barButtonItem title="Item" image="ellipsis.circle" catalog="system" id="TVi-kJ-wa7">
                                 <connections>
-                                    <action selector="copybtnPress:" destination="Elv-Mk-ir5" id="G0j-fB-wja"/>
+                                    <action selector="selectionMenu:" destination="Elv-Mk-ir5" id="jwl-H7-3b9"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem title="Item" image="plus" catalog="system" id="ap5-WR-otZ">

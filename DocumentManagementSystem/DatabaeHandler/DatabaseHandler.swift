@@ -39,22 +39,23 @@ class DatabaseHandler {
     }
     
   
-    func fetchCopyurls() -> [CopyURLS]{
-        var urls = [CopyURLS]()
-        let request : NSFetchRequest<CopyURLS> = CopyURLS.fetchRequest()
-        do{
-            urls = try contex.fetch(request)
-        } catch {
-            print("Error loading categories \(error)")
-        }
-        return urls
-    }
-    
-    
-    func deleteCoredata() {
-        let data  = fetch(CopyURLS.self)
-        for data in data {
-            delete(object: data)
-        }
-    }
+//    func fetchCopyurls() -> [CopyURLS]{
+//        var urls = [CopyURLS]()
+//        let request : NSFetchRequest<CopyURLS> = CopyURLS.fetchRequest()
+//        do{
+//            urls = try contex.fetch(request)
+//        } catch {
+//            print("Error loading categories \(error)")
+//        }
+//        return urls
+//    }
+//
+//
+//    func deleteCoredata() {
+//        let data  = fetch(CopyURLS.self)
+//        for data in data {
+//            delete(object: data)
+//        }
+//    }
+
 }

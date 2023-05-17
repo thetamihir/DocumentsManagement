@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreData
 
 class DirectoriesPresenter {
     
@@ -54,19 +55,6 @@ class DirectoriesPresenter {
         directoryUrls = getDirectory()
     }
     
-    func saveURLs(url : URL) -> String {
-        var stringurl : String? = nil
-        let pathComponents = url.pathComponents
-        if pathComponents.count >= 2 {
-            let secondLastComponent = pathComponents[pathComponents.count - 2]
-            let lastComponent = url.lastPathComponent
-            stringurl = "\(secondLastComponent)/\(lastComponent)"
-            
-        }
-        return stringurl ?? ""
-    }
-    
- 
     func checkStorage(completion : (Bool) -> Void ) {
         guard let totalfileSize =  FileManager.default.directorySize( Constants.documentsDirectoryURL) else{return}
         if totalfileSize < Constants.storageLimit{
@@ -86,4 +74,5 @@ class DirectoriesPresenter {
     func givesizeOfStorage() -> Int {
         return FileManager.default.directorySize( Constants.documentsDirectoryURL) ?? 0
     }
+    
 }

@@ -22,7 +22,6 @@ extension UIViewController {
 
 // Mark :-  finding size of that urls in bytes
 extension URL {
-    
     var fileSize: Int? {
         do {
             let val = try self.resourceValues(forKeys: [.totalFileAllocatedSizeKey, .fileAllocatedSizeKey])

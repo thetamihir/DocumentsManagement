@@ -8,7 +8,7 @@
 import UIKit
 import MobileCoreServices
 import QuickLook
-import DropDown
+
 
 
 class DocumentsTableViewController: UITableViewController, UIGestureRecognizerDelegate{
@@ -32,7 +32,7 @@ class DocumentsTableViewController: UITableViewController, UIGestureRecognizerDe
         DocumetsPresenter.obj.subDirectorys(url: url)
     }
     
-    @IBAction func copybtnPress(_ sender: UIBarButtonItem) {
+    @IBAction func selectionMenu(_ sender: UIBarButtonItem) {
         addActionsheet()
     }
         
@@ -208,7 +208,7 @@ extension DocumentsTableViewController {
             print("copy")
             if self.selected{
                 DocumetsPresenter.obj.copyurls.removeAll()
-                DatabaseHandler.database.deleteCoredata()
+                DocumetsPresenter.obj.deleteCopyURLS()
                 if let selectedurls  = self.tableView.indexPathsForSelectedRows{
                     DocumetsPresenter.obj.copyOperation(indexPath: selectedurls)
                 }
@@ -227,9 +227,9 @@ extension DocumentsTableViewController {
                 guard success else {return
                     self.alert(title: "storage limit!", message: "please delete some big files", okActionTitle: "cancle")
                 }
-                let geturlPath = DatabaseHandler.database.fetch(CopyURLS.self)
-                for path in geturlPath {
-                    DocumetsPresenter.obj.pasteDocuments(desurl: self.desUrl!, addcomponet: path.copyurls!){success in
+                let geturlcomponent = DatabaseHandler.database.fetch(CopyURLS.self)
+                for component in geturlcomponent {
+                    DocumetsPresenter.obj.pasteDocuments(desurl: self.desUrl!, addcomponent: component.copyurls!){success in
                         guard success else {return
                             self.alert(title: "Alert", message: "Some files are alredy exist", okActionTitle: "OK")
                         }
