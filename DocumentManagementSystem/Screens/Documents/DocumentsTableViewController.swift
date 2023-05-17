@@ -9,12 +9,11 @@ import UIKit
 import MobileCoreServices
 import QuickLook
 
-
-
 class DocumentsTableViewController: UITableViewController, UIGestureRecognizerDelegate{
     var desUrl : URL? = nil
     var copy = true
     var selected = false
+    
     @IBOutlet weak var copyBtnPress: UIBarButtonItem!
     
     override func viewDidLoad() {
@@ -163,8 +162,6 @@ extension DocumentsTableViewController : UIDocumentPickerDelegate {
         catch {
             print(error.localizedDescription)
         }
-        
-        
     }
     
 }

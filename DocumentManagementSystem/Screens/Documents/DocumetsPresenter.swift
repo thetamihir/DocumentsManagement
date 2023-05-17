@@ -84,6 +84,7 @@ class DocumetsPresenter{
         for url in self.copyurls {
              let copyurl = CopyURLS(context: DatabaseHandler.database.contex)
              copyurl.copyurls = self.saveURLs(url: url)
+             copyurl.urlsize = Int16(self.sizeOfURLs(url: url)) 
              DatabaseHandler.database.save()
         }
     }
@@ -102,6 +103,11 @@ class DocumetsPresenter{
         return stringurl ?? ""
     }
     
+    func sizeOfURLs(url : URL) -> Int {
+        var size : Int? = 0
+        size = url.fileSize
+        return size ?? 0
+    }
     
     
     func moveOperation (selectedurl : URL , desurl : URL) {
@@ -111,6 +117,27 @@ class DocumetsPresenter{
         } catch  {
             print(error.localizedDescription)
         }
+    }
+    
+    func checkStoragewhilePast(urls : [CopyURLS] , completion : (Bool) -> Void){
+     let copyStorage = copyurlStorage(urls: urls)
+        let totalStorage = DirectoriesPresenter.share.givesizeOfStorage()
+        if (copyStorage < totalStorage){
+            completion(true)
+        }
+        else{
+            completion(false)
+        }
+        
+    }
+    
+    
+    func copyurlStorage(urls : [CopyURLS]) -> Int{
+        var totalSize : Int = 0
+        for url in urls{
+            totalSize += Int(url.urlsize)
+        }
+        return totalSize / 1024 * 1024 * 1024
     }
     
     // Mark :- database functions

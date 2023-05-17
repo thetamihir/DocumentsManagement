@@ -9,10 +9,11 @@ import Foundation
 
 class Constants {
      // set limit of storage
-    static let storageLimit = (1024 * 1024 * 1024)/4
+    static let storageLimit = (1024 * 1024 * 1024)
     
     // storedirectory url
     static var documentsDirectoryURL: URL {
         return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
     }
+    
 }

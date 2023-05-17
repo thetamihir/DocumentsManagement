@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E95211E92A14B56A00B38E1C /* CopyURLS+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95211E72A14B56A00B38E1C /* CopyURLS+CoreDataClass.swift */; };
-		E95211EA2A14B56A00B38E1C /* CopyURLS+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95211E82A14B56A00B38E1C /* CopyURLS+CoreDataProperties.swift */; };
+		E95211ED2A14BC4600B38E1C /* CopyURLS+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95211EB2A14BC4600B38E1C /* CopyURLS+CoreDataClass.swift */; };
+		E95211EE2A14BC4600B38E1C /* CopyURLS+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95211EC2A14BC4600B38E1C /* CopyURLS+CoreDataProperties.swift */; };
 		E967530D2A11F55A00D3B5FA /* DatabaseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E967530C2A11F55A00D3B5FA /* DatabaseHandler.swift */; };
 		E967530F2A11F59200D3B5FA /* PersistanceStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E967530E2A11F59200D3B5FA /* PersistanceStorage.swift */; };
 		E97AEC8C2A0DF78500E14842 /* DocumetsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97AEC8B2A0DF78500E14842 /* DocumetsPresenter.swift */; };
@@ -32,8 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E95211E72A14B56A00B38E1C /* CopyURLS+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CopyURLS+CoreDataClass.swift"; sourceTree = "<group>"; };
-		E95211E82A14B56A00B38E1C /* CopyURLS+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CopyURLS+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E95211EB2A14BC4600B38E1C /* CopyURLS+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CopyURLS+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E95211EC2A14BC4600B38E1C /* CopyURLS+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CopyURLS+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E967530C2A11F55A00D3B5FA /* DatabaseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHandler.swift; sourceTree = "<group>"; };
 		E967530E2A11F59200D3B5FA /* PersistanceStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceStorage.swift; sourceTree = "<group>"; };
 		E97AEC8B2A0DF78500E14842 /* DocumetsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumetsPresenter.swift; sourceTree = "<group>"; };
@@ -72,8 +72,8 @@
 		E967530A2A11F51600D3B5FA /* Coredata */ = {
 			isa = PBXGroup;
 			children = (
-				E95211E72A14B56A00B38E1C /* CopyURLS+CoreDataClass.swift */,
-				E95211E82A14B56A00B38E1C /* CopyURLS+CoreDataProperties.swift */,
+				E95211EB2A14BC4600B38E1C /* CopyURLS+CoreDataClass.swift */,
+				E95211EC2A14BC4600B38E1C /* CopyURLS+CoreDataProperties.swift */,
 				E967530E2A11F59200D3B5FA /* PersistanceStorage.swift */,
 			);
 			path = Coredata;
@@ -294,8 +294,8 @@
 				E967530D2A11F55A00D3B5FA /* DatabaseHandler.swift in Sources */,
 				E9D8E89F2A134B6A0080EBC4 /* Extenstion.swift in Sources */,
 				E9C1C97F2A0A0A330078932D /* AppDelegate.swift in Sources */,
-				E95211E92A14B56A00B38E1C /* CopyURLS+CoreDataClass.swift in Sources */,
-				E95211EA2A14B56A00B38E1C /* CopyURLS+CoreDataProperties.swift in Sources */,
+				E95211ED2A14BC4600B38E1C /* CopyURLS+CoreDataClass.swift in Sources */,
+				E95211EE2A14BC4600B38E1C /* CopyURLS+CoreDataProperties.swift in Sources */,
 				E9D4949E2A0A87340000DB7D /* DocumentsTableViewController.swift in Sources */,
 				E9C1C99F2A0A59BD0078932D /* DirectoriesTableViewCell.swift in Sources */,
 				E9C1C9892A0A0A330078932D /* DocumentManagementSystem.xcdatamodeld in Sources */,

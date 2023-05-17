@@ -13,7 +13,7 @@ class DirectoriesTableViewController: UITableViewController {
         super.viewDidLoad()
         title = "Directories"
         DirectoriesPresenter.share.storeDirectory()
-        setupBlurEffect()
+         setupBlurEffect()
          biomericAuth()
     }
     
